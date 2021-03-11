@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<table class ="table table-striped">
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Team</th>
+            <th scope="col">Aktion</th>
+        </tr>
+        {% for u in user %}
+        <tr>
+            <td scope="row">{{u.username}}</td>
+            <td scope="row">{{u.email}}</td>
+            <td scope="row">{{u.team.bez}}</td>
+            <td scope="row">
+            <a class="btn" href="edituser/{{u.id}}">Edit</a>
+            <a class="btn" href="deleteuser/{{u.id}}">Löschen</a>   
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
