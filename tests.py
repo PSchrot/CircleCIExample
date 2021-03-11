@@ -1,11 +1,11 @@
 import os
-import unittest
+import unittest2
 
 from config import basedir
 from app import app, db
 from app.models import User, Team
 
-class TestCase(unittest.TestCase):
+class TestCase(unittest2.TestCase):
     def setUp(self):
         app.config['TESTING'] = True
         app.config['WTF_CSRF_ENABLED'] = False
@@ -71,4 +71,4 @@ class TestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest2.main()
