@@ -11,6 +11,7 @@ class TestCase(unittest.TestCase):
         app.config['WTF_CSRF_ENABLED'] = False
         app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'test.db')
         self.app = app.test_client()
+        self.app.testing = True
         db.create_all()
 
     def tearDown(self):
