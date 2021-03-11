@@ -1,5 +1,5 @@
 import os
-import unittest2
+import unittest
 
 from config import basedir
 from app import app, db
