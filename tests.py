@@ -5,7 +5,7 @@ from config import basedir
 from app import app, db
 from app.models import User, Team
 
-class TestCase(unittest2.TestCase):
+class TestCase(unittest.TestCase):
     def setUp(self):
         app.config['TESTING'] = True
         app.config['WTF_CSRF_ENABLED'] = False
@@ -71,4 +71,4 @@ class TestCase(unittest2.TestCase):
 
 
 if __name__ == '__main__':
-    unittest2.main()
+    unittest.main()
